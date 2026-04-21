@@ -1,0 +1,106 @@
+{
+  "phase2.partial_chain.apocalypse_v1": {
+    "train": {
+      "records": 662,
+      "id_duplicates": 0,
+      "near_duplicates": 0,
+      "has_reasoning": 662,
+      "attack_chain_len_ge_2": 0,
+      "has_hypotheses": 662,
+      "has_uncertainties": 0,
+      "avg_signal_count": 2.0,
+      "median_signal_count": 2,
+      "missing_text_field": 662
+    },
+    "eval": {
+      "records": 74,
+      "id_duplicates": 0,
+      "near_duplicates": 0,
+      "has_reasoning": 74,
+      "attack_chain_len_ge_2": 0,
+      "has_hypotheses": 74,
+      "has_uncertainties": 0,
+      "avg_signal_count": 2.0,
+      "median_signal_count": 2,
+      "missing_text_field": 74
+    }
+  },
+  "phase2.v2": {
+    "train": {
+      "records": 350,
+      "id_duplicates": 0,
+      "near_duplicates": 0,
+      "has_reasoning": 350,
+      "attack_chain_len_ge_2": 350,
+      "has_hypotheses": 350,
+      "has_uncertainties": 350,
+      "avg_signal_count": 13.0229,
+      "median_signal_count": 13,
+      "missing_text_field": 350
+    },
+    "eval": {
+      "records": 60,
+      "id_duplicates": 0,
+      "near_duplicates": 0,
+      "has_reasoning": 60,
+      "attack_chain_len_ge_2": 60,
+      "has_hypotheses": 60,
+      "has_uncertainties": 60,
+      "avg_signal_count": 12.9833,
+      "median_signal_count": 13,
+      "missing_text_field": 60
+    }
+  },
+  "phase2.offensive_recon.v1": {
+    "train": {
+      "records": 260,
+      "id_duplicates": 0,
+      "near_duplicates": 0,
+      "has_reasoning": 260,
+      "attack_chain_len_ge_2": 0,
+      "has_hypotheses": 260,
+      "has_uncertainties": 260,
+      "avg_signal_count": 0.0,
+      "median_signal_count": 0,
+      "missing_text_field": 260
+    },
+    "eval": {
+      "records": 40,
+      "id_duplicates": 0,
+      "near_duplicates": 0,
+      "has_reasoning": 40,
+      "attack_chain_len_ge_2": 0,
+      "has_hypotheses": 40,
+      "has_uncertainties": 40,
+      "avg_signal_count": 0.0,
+      "median_signal_count": 0,
+      "missing_text_field": 40
+    }
+  },
+  "phase2.thm_inference.v1": {
+    "train": {
+      "records": 99,
+      "id_duplicates": 0,
+      "near_duplicates": 0,
+      "has_reasoning": 99,
+      "attack_chain_len_ge_2": 0,
+      "has_hypotheses": 0,
+      "has_uncertainties": 0,
+      "avg_signal_count": 0.0,
+      "median_signal_count": 0,
+      "missing_text_field": 0
+    },
+    "eval": {
+      "records": 17,
+      "id_duplicates": 0,
+      "near_duplicates": 0,
+      "has_reasoning": 17,
+      "attack_chain_len_ge_2": 0,
+      "has_hypotheses": 0,
+      "has_uncertainties": 0,
+      "avg_signal_count": 0.0,
+      "median_signal_count": 0,
+      "missing_text_field": 0
+    }
+  }
+}

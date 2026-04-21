@@ -1,0 +1,121 @@
+{
+  "base_dir": "/Users/digitalcenter/Apocalypse-Training",
+  "sources_used": [
+    "ActiveDirectoryEnumeration.md",
+    "adversary-in-the-middle-enumeration.md",
+    "brute-force-enumeration.md",
+    "collection-enumeration.md",
+    "command-and-control-enumeration.md",
+    "credential-access-enumeration.md",
+    "credentials-from-password-stores-enumeration.md",
+    "defense-evasion-enumeration.md",
+    "discovery-enumeration.md",
+    "dns-enumeration.md",
+    "execution-enumeration.md",
+    "exfiltration-enumeration.md",
+    "impact-enumeration.md",
+    "lateral-movement-enumeration.md",
+    "linux-enumeration.md",
+    "macos-enumeration.md",
+    "netwrok-enumeration.md",
+    "persistence-enumeration.md",
+    "reconnaissance-enumeration.md",
+    "resource-development-enumeration.md",
+    "smb-windows-enumeration.md",
+    "snmp-enumeration.md",
+    "web-enumeration.md"
+  ],
+  "source_count": 23,
+  "samples_per_file": 5,
+  "records_total": 115,
+  "train_records": 98,
+  "eval_records": 17,
+  "outputs": {
+    "raw": "data/raw/enumeration.playbooks.operations.jsonl",
+    "train": "data/training/train.enumeration.operations.instructions.jsonl",
+    "eval": "data/evaluation/eval.enumeration.operations.instructions.jsonl"
+  },
+  "top_tools": [
+    [
+      "echo",
+      49
+    ],
+    [
+      "curl",
+      30
+    ],
+    [
+      "local",
+      28
+    ],
+    [
+      "mkdir",
+      24
+    ],
+    [
+      "for",
+      19
+    ],
+    [
+      "nmap",
+      18
+    ],
+    [
+      "python3",
+      18
+    ],
+    [
+      "cmd",
+      17
+    ],
+    [
+      "aws",
+      16
+    ],
+    [
+      "ls",
+      15
+    ],
+    [
+      "cat",
+      13
+    ],
+    [
+      "ts=$(date -u +%Y%m%dT%H%M%SZ)",
+      11
+    ],
+    [
+      "find",
+      11
+    ],
+    [
+      "crackmapexec",
+      10
+    ],
+    [
+      "powershell",
+      10
+    ],
+    [
+      "grep",
+      9
+    ],
+    [
+      "shift",
+      8
+    ],
+    [
+      "PY",
+      8
+    ],
+    [
+      "dig",
+      8
+    ],
+    [
+      "ssh",
+      8
+    ]
+  ],
+  "non_mitre_focused": true
+}

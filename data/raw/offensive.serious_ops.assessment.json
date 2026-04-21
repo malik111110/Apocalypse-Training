@@ -1,0 +1,136 @@
+{
+  "files": {
+    "data/training/train.htb.serious_ops.instructions.jsonl": {
+      "metrics": {
+        "total_records": 82,
+        "schema_completeness_pct": 100.0,
+        "numbered_steps_pct": 100.0,
+        "fallback_coverage_pct": 100.0,
+        "opsec_coverage_pct": 100.0,
+        "records_score_ge_75_pct": 64.63,
+        "avg_observed_commands": 6.61,
+        "avg_operation_steps": 7.0,
+        "min_operation_steps": 7,
+        "max_operation_steps": 7
+      },
+      "quality_gates": {
+        "schema_completeness_pct": 100.0,
+        "numbered_steps_pct": 95.0,
+        "fallback_coverage_pct": 95.0,
+        "opsec_coverage_pct": 95.0,
+        "records_score_ge_75_pct": 70.0,
+        "avg_observed_commands": 6.0,
+        "avg_operation_steps": 6.0
+      },
+      "checks": {
+        "schema_completeness_pct": true,
+        "numbered_steps_pct": true,
+        "fallback_coverage_pct": true,
+        "opsec_coverage_pct": true,
+        "records_score_ge_75_pct": false,
+        "avg_observed_commands": true,
+        "avg_operation_steps": true
+      },
+      "overall_status": "needs_hardening"
+    },
+    "data/training/train.thm.serious_ops.instructions.jsonl": {
+      "metrics": {
+        "total_records": 99,
+        "schema_completeness_pct": 100.0,
+        "numbered_steps_pct": 100.0,
+        "fallback_coverage_pct": 100.0,
+        "opsec_coverage_pct": 100.0,
+        "records_score_ge_75_pct": 100.0,
+        "avg_observed_commands": 11.21,
+        "avg_operation_steps": 7.0,
+        "min_operation_steps": 7,
+        "max_operation_steps": 7
+      },
+      "quality_gates": {
+        "schema_completeness_pct": 100.0,
+        "numbered_steps_pct": 95.0,
+        "fallback_coverage_pct": 95.0,
+        "opsec_coverage_pct": 95.0,
+        "records_score_ge_75_pct": 70.0,
+        "avg_observed_commands": 6.0,
+        "avg_operation_steps": 6.0
+      },
+      "checks": {
+        "schema_completeness_pct": true,
+        "numbered_steps_pct": true,
+        "fallback_coverage_pct": true,
+        "opsec_coverage_pct": true,
+        "records_score_ge_75_pct": true,
+        "avg_observed_commands": true,
+        "avg_operation_steps": true
+      },
+      "overall_status": "pass"
+    },
+    "data/training/train.offensive.serious_ops.instructions.jsonl": {
+      "metrics": {
+        "total_records": 181,
+        "schema_completeness_pct": 100.0,
+        "numbered_steps_pct": 100.0,
+        "fallback_coverage_pct": 100.0,
+        "opsec_coverage_pct": 100.0,
+        "records_score_ge_75_pct": 83.98,
+        "avg_observed_commands": 9.13,
+        "avg_operation_steps": 7.0,
+        "min_operation_steps": 7,
+        "max_operation_steps": 7
+      },
+      "quality_gates": {
+        "schema_completeness_pct": 100.0,
+        "numbered_steps_pct": 95.0,
+        "fallback_coverage_pct": 95.0,
+        "opsec_coverage_pct": 95.0,
+        "records_score_ge_75_pct": 70.0,
+        "avg_observed_commands": 6.0,
+        "avg_operation_steps": 6.0
+      },
+      "checks": {
+        "schema_completeness_pct": true,
+        "numbered_steps_pct": true,
+        "fallback_coverage_pct": true,
+        "opsec_coverage_pct": true,
+        "records_score_ge_75_pct": true,
+        "avg_observed_commands": true,
+        "avg_operation_steps": true
+      },
+      "overall_status": "pass"
+    }
+  },
+  "combined": {
+    "metrics": {
+      "total_records": 362,
+      "schema_completeness_pct": 100.0,
+      "numbered_steps_pct": 100.0,
+      "fallback_coverage_pct": 100.0,
+      "opsec_coverage_pct": 100.0,
+      "records_score_ge_75_pct": 83.98,
+      "avg_observed_commands": 9.13,
+      "avg_operation_steps": 7.0,
+      "min_operation_steps": 7,
+      "max_operation_steps": 7
+    },
+    "quality_gates": {
+      "schema_completeness_pct": 100.0,
+      "numbered_steps_pct": 95.0,
+      "fallback_coverage_pct": 95.0,
+      "opsec_coverage_pct": 95.0,
+      "records_score_ge_75_pct": 70.0,
+      "avg_observed_commands": 6.0,
+      "avg_operation_steps": 6.0
+    },
+    "checks": {
+      "schema_completeness_pct": true,
+      "numbered_steps_pct": true,
+      "fallback_coverage_pct": true,
+      "opsec_coverage_pct": true,
+      "records_score_ge_75_pct": true,
+      "avg_observed_commands": true,
+      "avg_operation_steps": true
+    },
+    "overall_status": "pass"
+  }
+}

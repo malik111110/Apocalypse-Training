@@ -1,0 +1,23 @@
+{
+  "input_root": "HTB-MACHINES/thm-writeups-main",
+  "thm_root": "HTB-MACHINES/thm-writeups-main",
+  "markdown_glob": "*/README.md",
+  "exclude_globs": [],
+  "id_prefix": "thm-infer",
+  "source_label": "tryhackme_writeups",
+  "require_commands": true,
+  "output_raw": "data/raw/thm.rooms.inference.jsonl",
+  "output_train": "data/training/train.thm.inference.instructions.jsonl",
+  "output_eval": "data/evaluation/eval.thm.inference.instructions.jsonl",
+  "samples_per_room": 4,
+  "eval_ratio": 0.15,
+  "seed": 2026,
+  "stats": {
+    "rooms_total": 29,
+    "rooms_with_commands": 29,
+    "rooms_used": 29,
+    "records_total": 116,
+    "train_records": 99,
+    "eval_records": 17
+  }
+}

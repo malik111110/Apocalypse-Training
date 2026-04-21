@@ -1,0 +1,41 @@
+{
+  "id": "",
+  "context": {
+    "environment": "",
+    "industry": "",
+    "critical_assets": [],
+    "security_stack": []
+  },
+  "input": {
+    "signals": [],
+    "alerts": [],
+    "raw_logs": []
+  },
+  "reasoning": {
+    "tactic": "",
+    "techniques": [],
+    "hypotheses": [],
+    "confidence": "low",
+    "explanation": ""
+  },
+  "detection": {
+    "rules": [],
+    "ioc": [],
+    "behavior_patterns": []
+  },
+  "mitigation": {
+    "immediate_actions": [],
+    "short_term": [],
+    "long_term": []
+  },
+  "response": {
+    "containment": [],
+    "investigation": [],
+    "recovery": []
+  },
+  "meta": {
+    "source": "",
+    "difficulty": "",
+    "attack_stage": ""
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "input_root": "HTB-MACHINES",
+  "thm_root": "HTB-MACHINES",
+  "markdown_glob": "*.md",
+  "exclude_globs": [],
+  "id_prefix": "htb-serious",
+  "source_label": "hackthebox_writeups",
+  "require_commands": true,
+  "output_raw": "data/raw/htb.machines.serious_ops.jsonl",
+  "output_train": "data/training/train.htb.serious_ops.instructions.jsonl",
+  "output_eval": "data/evaluation/eval.htb.serious_ops.instructions.jsonl",
+  "samples_per_room": 4,
+  "eval_ratio": 0.15,
+  "seed": 2026,
+  "stats": {
+    "rooms_total": 24,
+    "rooms_with_commands": 24,
+    "rooms_used": 24,
+    "records_total": 96,
+    "train_records": 82,
+    "eval_records": 14
+  }
+}

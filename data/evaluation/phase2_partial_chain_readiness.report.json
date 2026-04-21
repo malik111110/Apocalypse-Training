@@ -1,0 +1,144 @@
+{
+  "inputs": {
+    "train": "data/training/train.phase2.partial_chain.apocalypse_v1.jsonl",
+    "eval": "data/evaluation/eval.phase2.partial_chain.apocalypse_v1.jsonl"
+  },
+  "thresholds": {
+    "chain_reconstruction": 0.8,
+    "ordering_under_noise": 0.7,
+    "cross_view_consistency": 0.7,
+    "max_keyword_dependency": 0.3
+  },
+  "train_metrics": {
+    "records": 662,
+    "multi_view_consistency": {
+      "tactic_match_rate": 1.0,
+      "attack_id_match_rate": 1.0,
+      "narrative_mentions_technique_rate": 1.0,
+      "cross_view_consistency_rate": 1.0
+    },
+    "keyword_dependency": {
+      "attack_id_in_input_rate": 0.6419939577039275,
+      "technique_name_in_input_rate": 1.0,
+      "templated_signal_rate": 1.0,
+      "keyword_dependency_rate": 1.0
+    },
+    "partial_observability_proxy": {
+      "signals_ge_3_rate": 0.0,
+      "drop50_nonempty_rate": 1.0,
+      "drop50_has_action_verb_rate": 0.9697885196374623,
+      "drop50_attack_id_leak_rate": 0.6419939577039275,
+      "drop50_technique_name_leak_rate": 0.5166163141993958,
+      "robust_partial_proxy_rate": 0.18429003021148035
+    },
+    "temporal_coherence": {
+      "chain_ready_records": 0,
+      "chain_ready_rate": 0.0,
+      "valid_temporal_order_rate": 0.0,
+      "chain_length_distribution": {}
+    },
+    "causal_linkage": {
+      "causal_linked_rate": 0.0
+    }
+  },
+  "eval_metrics": {
+    "records": 74,
+    "multi_view_consistency": {
+      "tactic_match_rate": 1.0,
+      "attack_id_match_rate": 1.0,
+      "narrative_mentions_technique_rate": 1.0,
+      "cross_view_consistency_rate": 1.0
+    },
+    "keyword_dependency": {
+      "attack_id_in_input_rate": 0.6351351351351351,
+      "technique_name_in_input_rate": 1.0,
+      "templated_signal_rate": 1.0,
+      "keyword_dependency_rate": 1.0
+    },
+    "partial_observability_proxy": {
+      "signals_ge_3_rate": 0.0,
+      "drop50_nonempty_rate": 1.0,
+      "drop50_has_action_verb_rate": 0.9324324324324325,
+      "drop50_attack_id_leak_rate": 0.6351351351351351,
+      "drop50_technique_name_leak_rate": 0.5135135135135135,
+      "robust_partial_proxy_rate": 0.16216216216216217
+    },
+    "temporal_coherence": {
+      "chain_ready_records": 0,
+      "chain_ready_rate": 0.0,
+      "valid_temporal_order_rate": 0.0,
+      "chain_length_distribution": {}
+    },
+    "causal_linkage": {
+      "causal_linked_rate": 0.0
+    }
+  },
+  "overall_metrics": {
+    "records": 736,
+    "multi_view_consistency": {
+      "cross_view_consistency_rate": 1.0
+    },
+    "keyword_dependency": {
+      "keyword_dependency_rate": 1.0,
+      "attack_id_in_input_rate": 0.6413043478260869,
+      "technique_name_in_input_rate": 1.0,
+      "templated_signal_rate": 1.0
+    },
+    "partial_observability_proxy": {
+      "robust_partial_proxy_rate": 0.18206521739130435,
+      "signals_ge_3_rate": 0.0
+    },
+    "temporal_coherence": {
+      "chain_ready_rate": 0.0,
+      "valid_temporal_order_rate": 0.0
+    },
+    "causal_linkage": {
+      "causal_linked_rate": 0.0
+    }
+  },
+  "gates": {
+    "temporal_coherence": {
+      "status": "not_measured",
+      "pass": false,
+      "measured_value": null,
+      "threshold": 0.7,
+      "reason": "No explicit multi-step chain fields found; ordering cannot be validated."
+    },
+    "causal_linkage": {
+      "status": "measured",
+      "pass": false,
+      "measured_value": 0.0,
+      "threshold": 0.7,
+      "reason": "Share same minimum threshold as ordering under noise for transition-quality readiness."
+    },
+    "partial_observability_consistency": {
+      "status": "proxy",
+      "pass": false,
+      "measured_value": 0.18206521739130435,
+      "threshold": 0.8,
+      "reason": "Proxy uses 50% signal drop with anti-leak constraint; model-level reconstruction still needs direct eval."
+    },
+    "cross_view_consistency": {
+      "status": "measured",
+      "pass": true,
+      "measured_value": 1.0,
+      "threshold": 0.7,
+      "reason": "Checks agreement across signals, labels, tactic metadata, and narrative references."
+    },
+    "low_keyword_dependency": {
+      "status": "measured",
+      "pass": false,
+      "measured_value": 1.0,
+      "threshold": 0.3,
+      "reason": "Lower is better; high value indicates shortcut-learning risk."
+    }
+  },
+  "overall_pass": false,
+  "recommendations": [
+    "Add explicit multi-step attack paths per sample (ordered steps with tactic and transition rationale).",
+    "Encode per-step transition cause (e.g., 'credential dump enabled lateral movement').",
+    "Create partial/noisy variants per scenario and verify same canonical chain label remains recoverable.",
+    "Reduce lexical leakage in inputs (remove explicit technique names/templates and avoid direct MITRE hinting in signal text).",
+    "Before reasoning training, run a held-out model test with 30-50% signal drop and noisy variants to measure true chain reconstruction and ordering-under-noise."
+  ]
+}

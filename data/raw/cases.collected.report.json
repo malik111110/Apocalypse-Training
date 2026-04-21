@@ -1,0 +1,19 @@
+{
+  "manifest": "/Users/digitalcenter/Apocalypse-Training/data/collection/manifests/sources.example.json",
+  "output": "/Users/digitalcenter/Apocalypse-Training/data/raw/cases.collected.jsonl",
+  "sources": [
+    {
+      "name": "simulation_feed",
+      "path": "/Users/digitalcenter/Apocalypse-Training/data/collection/incoming/simulation_cases.jsonl",
+      "format": "jsonl",
+      "records": 2
+    },
+    {
+      "name": "pentest_export",
+      "path": "/Users/digitalcenter/Apocalypse-Training/data/collection/incoming/pentest_cases.json",
+      "format": "json",
+      "records": 1
+    }
+  ],
+  "total_records": 3
+}

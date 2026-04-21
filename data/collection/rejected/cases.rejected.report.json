@@ -1,0 +1,9 @@
+{
+  "input": "/Users/digitalcenter/Apocalypse-Training/data/raw/cases.collected.jsonl",
+  "accepted_output": "/Users/digitalcenter/Apocalypse-Training/data/raw/cases.candidates.jsonl",
+  "rejected_output": "/Users/digitalcenter/Apocalypse-Training/data/collection/rejected/cases.rejected.jsonl",
+  "total": 3,
+  "accepted": 3,
+  "rejected": 0,
+  "rejection_reasons": {}
+}

@@ -1,0 +1,23 @@
+{
+  "sources": [
+    {
+      "name": "simulation_feed",
+      "path": "data/collection/incoming/simulation_cases.jsonl",
+      "format": "jsonl",
+      "default_meta": {
+        "source": "simulation",
+        "difficulty": "medium"
+      }
+    },
+    {
+      "name": "pentest_export",
+      "path": "data/collection/incoming/pentest_cases.json",
+      "format": "json",
+      "default_meta": {
+        "source": "pentest",
+        "difficulty": "hard"
+      }
+    }
+  ],
+  "output_raw": "data/raw/cases.collected.jsonl"
+}

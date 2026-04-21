@@ -1,0 +1,16 @@
+{
+  "thm_root": "HTB-MACHINES/thm-writeups-main",
+  "output_raw": "data/raw/thm.rooms.inference.v1.jsonl",
+  "output_train": "data/training/train.phase2.thm_inference.v1.jsonl",
+  "output_eval": "data/evaluation/eval.phase2.thm_inference.v1.jsonl",
+  "samples_per_room": 4,
+  "eval_ratio": 0.15,
+  "seed": 2026,
+  "stats": {
+    "rooms_total": 29,
+    "rooms_with_commands": 29,
+    "records_total": 116,
+    "train_records": 99,
+    "eval_records": 17
+  }
+}

@@ -1,0 +1,150 @@
+{
+  "inputs": {
+    "train": "data/training/train.phase2.v2.jsonl",
+    "eval": "data/evaluation/eval.phase2.v2.jsonl"
+  },
+  "thresholds": {
+    "chain_reconstruction": 0.8,
+    "ordering_under_noise": 0.7,
+    "cross_view_consistency": 0.7,
+    "max_keyword_dependency": 0.3
+  },
+  "train_metrics": {
+    "records": 350,
+    "multi_view_consistency": {
+      "tactic_match_rate": 1.0,
+      "attack_id_match_rate": 1.0,
+      "narrative_mentions_technique_rate": 1.0,
+      "cross_view_consistency_rate": 1.0
+    },
+    "keyword_dependency": {
+      "attack_id_in_input_rate": 0.0,
+      "technique_name_in_input_rate": 0.2885714285714286,
+      "templated_signal_rate": 0.0,
+      "keyword_dependency_rate": 0.2885714285714286
+    },
+    "partial_observability_proxy": {
+      "signals_ge_3_rate": 1.0,
+      "drop50_nonempty_rate": 1.0,
+      "drop50_has_action_verb_rate": 1.0,
+      "drop50_attack_id_leak_rate": 0.0,
+      "drop50_technique_name_leak_rate": 0.1657142857142857,
+      "robust_partial_proxy_rate": 0.8342857142857143
+    },
+    "temporal_coherence": {
+      "chain_ready_records": 350,
+      "chain_ready_rate": 1.0,
+      "valid_temporal_order_rate": 1.0,
+      "chain_length_distribution": {
+        "4": 35,
+        "5": 70,
+        "6": 175,
+        "7": 70
+      }
+    },
+    "causal_linkage": {
+      "causal_linked_rate": 1.0
+    }
+  },
+  "eval_metrics": {
+    "records": 60,
+    "multi_view_consistency": {
+      "tactic_match_rate": 1.0,
+      "attack_id_match_rate": 1.0,
+      "narrative_mentions_technique_rate": 1.0,
+      "cross_view_consistency_rate": 1.0
+    },
+    "keyword_dependency": {
+      "attack_id_in_input_rate": 0.0,
+      "technique_name_in_input_rate": 0.3,
+      "templated_signal_rate": 0.0,
+      "keyword_dependency_rate": 0.3
+    },
+    "partial_observability_proxy": {
+      "signals_ge_3_rate": 1.0,
+      "drop50_nonempty_rate": 1.0,
+      "drop50_has_action_verb_rate": 1.0,
+      "drop50_attack_id_leak_rate": 0.0,
+      "drop50_technique_name_leak_rate": 0.15,
+      "robust_partial_proxy_rate": 0.85
+    },
+    "temporal_coherence": {
+      "chain_ready_records": 60,
+      "chain_ready_rate": 1.0,
+      "valid_temporal_order_rate": 1.0,
+      "chain_length_distribution": {
+        "4": 6,
+        "5": 12,
+        "6": 30,
+        "7": 12
+      }
+    },
+    "causal_linkage": {
+      "causal_linked_rate": 1.0
+    }
+  },
+  "overall_metrics": {
+    "records": 410,
+    "multi_view_consistency": {
+      "cross_view_consistency_rate": 1.0
+    },
+    "keyword_dependency": {
+      "keyword_dependency_rate": 0.29024390243902437,
+      "attack_id_in_input_rate": 0.0,
+      "technique_name_in_input_rate": 0.29024390243902437,
+      "templated_signal_rate": 0.0
+    },
+    "partial_observability_proxy": {
+      "robust_partial_proxy_rate": 0.8365853658536585,
+      "signals_ge_3_rate": 1.0
+    },
+    "temporal_coherence": {
+      "chain_ready_rate": 1.0,
+      "valid_temporal_order_rate": 1.0
+    },
+    "causal_linkage": {
+      "causal_linked_rate": 1.0
+    }
+  },
+  "gates": {
+    "temporal_coherence": {
+      "status": "measured",
+      "pass": true,
+      "measured_value": 1.0,
+      "threshold": 0.7,
+      "reason": "Measured on records that include explicit multi-step chain order."
+    },
+    "causal_linkage": {
+      "status": "measured",
+      "pass": true,
+      "measured_value": 1.0,
+      "threshold": 0.7,
+      "reason": "Share same minimum threshold as ordering under noise for transition-quality readiness."
+    },
+    "partial_observability_consistency": {
+      "status": "proxy",
+      "pass": true,
+      "measured_value": 0.8365853658536585,
+      "threshold": 0.8,
+      "reason": "Proxy uses 50% signal drop with anti-leak constraint; model-level reconstruction still needs direct eval."
+    },
+    "cross_view_consistency": {
+      "status": "measured",
+      "pass": true,
+      "measured_value": 1.0,
+      "threshold": 0.7,
+      "reason": "Checks agreement across signals, labels, tactic metadata, and narrative references."
+    },
+    "low_keyword_dependency": {
+      "status": "measured",
+      "pass": true,
+      "measured_value": 0.29024390243902437,
+      "threshold": 0.3,
+      "reason": "Lower is better; high value indicates shortcut-learning risk."
+    }
+  },
+  "overall_pass": true,
+  "recommendations": [
+    "Before reasoning training, run a held-out model test with 30-50% signal drop and noisy variants to measure true chain reconstruction and ordering-under-noise."
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "created_files": [
+    "data/raw/atomic/atomic_reconnaissance_apocalypse_augmented.jsonl",
+    "data/raw/atomic/atomic_enterprise-attack_with_subtechniques_plus_recon.jsonl"
+  ],
+  "base_rows": 691,
+  "base_recon_rows": 45,
+  "added_recon_rows": 45,
+  "merged_rows": 736,
+  "merged_recon_rows": 90,
+  "recon_increase_pct": 100.0,
+  "merged_tactic_counts": {
+    "collection": 36,
+    "command_and_control": 41,
+    "credential_access": 62,
+    "defense_evasion": 183,
+    "discovery": 43,
+    "execution": 45,
+    "exfiltration": 19,
+    "impact": 33,
+    "initial_access": 15,
+    "lateral_movement": 17,
+    "persistence": 80,
+    "privilege_escalation": 25,
+    "reconnaissance": 90,
+    "resource_development": 47
+  }
+}

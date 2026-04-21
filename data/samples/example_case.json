@@ -1,0 +1,91 @@
+{
+  "id": "sample-case-001",
+  "context": {
+    "environment": "Windows AD",
+    "industry": "finance",
+    "critical_assets": [
+      "domain_controller",
+      "db_server"
+    ],
+    "security_stack": [
+      "EDR",
+      "SIEM"
+    ]
+  },
+  "input": {
+    "signals": [
+      {
+        "type": "process_creation",
+        "timestamp": "2026-04-18T10:15:00Z",
+        "host": "workstation-22",
+        "details": {
+          "parent_process": "winword.exe",
+          "child_process": "powershell.exe",
+          "command": "powershell -enc ..."
+        }
+      }
+    ],
+    "alerts": [],
+    "raw_logs": []
+  },
+  "reasoning": {
+    "tactic": "execution",
+    "techniques": [
+      {
+        "name": "Command and Scripting Interpreter",
+        "subtype": "PowerShell",
+        "likelihood": 0.92
+      }
+    ],
+    "hypotheses": [
+      "Malicious macro spawning PowerShell",
+      "User-triggered script execution"
+    ],
+    "confidence": "high",
+    "explanation": "Encoded PowerShell combined with unusual parent process indicates malicious execution"
+  },
+  "detection": {
+    "rules": [
+      "Alert on base64 encoded PowerShell commands",
+      "Detect Office spawning shell processes"
+    ],
+    "ioc": [
+      "powershell.exe -enc",
+      "winword.exe -> powershell.exe"
+    ],
+    "behavior_patterns": [
+      "Office macro abuse",
+      "Script-based execution"
+    ]
+  },
+  "mitigation": {
+    "immediate_actions": [
+      "Terminate suspicious process",
+      "Isolate host"
+    ],
+    "short_term": [
+      "Disable macros",
+      "Restrict PowerShell execution"
+    ],
+    "long_term": [
+      "Application whitelisting",
+      "Security awareness training"
+    ]
+  },
+  "response": {
+    "containment": [
+      "Isolate affected workstation"
+    ],
+    "investigation": [
+      "Correlate host process tree with SIEM telemetry"
+    ],
+    "recovery": [
+      "Reimage host and restore validated baseline"
+    ]
+  },
+  "meta": {
+    "source": "simulation",
+    "difficulty": "medium",
+    "attack_stage": "execution"
+  }
+}
